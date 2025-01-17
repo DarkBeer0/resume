@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* Сброс базовых отступов + плавная прокрутка */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+/* Контейнер резюме */
+.resume-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 3rem auto; /* центрируем по горизонтали */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  line-height: 1.6;
+  padding: 2rem 2rem 3rem;
+  animation: fadein 0.8s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Анимация появления контейнера */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Декоративная полоска слева от резюме */
+.resume-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.3rem;
+  height: 100%;
+  background: linear-gradient(#12b886, #37b24d);
+}
+
+/* Шапка (Header) */
+.header {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+/* Для имени добавим лёгкий text-shadow */
+.name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0b7285;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.name:hover {
+  color: #12b886;
+}
+
+.contact-info p {
+  margin: 0.25rem 0;
+}
+
+.contact-info a {
+  color: #12b886;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-info a:hover {
+  color: #0c8599;
+  text-decoration: underline;
+}
+
+/* ---------- Раскрывающиеся секции (CollapsibleSection) ---------- */
+
+/* Карточка для секции */
+.collapsible-section {
+  background: #fafafa; /* немного отличаем от белого фона контейнера */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Заголовок секции */
+.collapsible-header {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  color: #444;
+  margin-bottom: 0.75rem;
+  user-select: none; /* чтобы текст не выделялся при клике */
+}
+
+/* Стрелка (▲ / ▼) */
+.arrow {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+/* Контент секции (плавное раскрытие) */
+.collapsible-content {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.collapsible-content.open {
+  max-height: 2000px; /* достаточно большое значение */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Список навыков с "бэйджами" ---------- */
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Каждый li может содержать несколько бэйджей */
+.skills-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Стиль для бэйджа */
+.badge {
+  display: inline-block;
+  background-color: rgba(18, 184, 134, 0.1);
+  color: #0b7285;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Образование */
+.education-item {
+  margin-bottom: 1rem;
+}
+
+/* ---------- Таймлайн для опыта ---------- */
+
+.timeline {
+  margin: 1rem 0;
+  position: relative;
+  border-left: 2px solid #ddd; 
+  /* Линия слева, по ней будут "точки" */
+  padding-left: 2rem; 
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #12b886;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #ddd;
+}
+
+/* Дата/год располагаем в отдельном блоке */
+.timeline-date {
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: #0b7285;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+.timeline-content h3:hover {
+  color: #12b886;
+}
+
+.timeline-content ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Подвал (Footer) */
+.footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid #eee;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer p {
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.4;
+}

@@ -72,12 +72,12 @@ function App() {
       {/* SUMMARY */}
       <CollapsibleSection title="SUMMARY" accentColor="#f08c00">
         <p>
-          Software Developer with over 3 years of experience in programming and
-          technical support. Proficient in C#, Java, JavaScript, SQL, and
-          experienced with frameworks like .NET, Entity Framework, Spring, and
-          Hibernate. Passionate about coding and continuously expanding skill
-          sets. Seeking opportunities to leverage expertise to contribute
-          significantly to team objectives and project success.
+          Software Developer and Programming Enthusiast with over 3 years of experience
+          in software development and technical support. Skilled in C#, Java, JavaScript,
+          SQL, and Python, with experience using .NET, Entity Framework, Spring, and Hibernate frameworks.
+          Currently pursuing a Master’s degree in Programming at WSB Merito University in Warsaw (starting October 2025).
+          Passionate about continuous learning, improving technical skills, and preparing to return to the IT field
+          to contribute effectively to real-world projects.
         </p>
       </CollapsibleSection>
 
@@ -134,6 +134,17 @@ function App() {
           Andersen Company — Certificate of course completion
           <br />
           <em>March 2024 – August 2024</em>
+        </div>
+
+        <div className="education-item">
+          <strong>Master’s Degree in Programming</strong>
+          <br />
+          <em>WSB Merito University in Warsaw (October 2025 – March 2027)</em>
+          <p>
+            Enrolled in a master's program in programming at WSB Merito University in Warsaw,
+            starting in October 2025. The program lasts one and a half years and focuses on
+            advanced software development and modern IT technologies.
+          </p>
         </div>
         
         {/* Добавляем новый блок об постоянном обучении */}
